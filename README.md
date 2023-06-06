@@ -65,4 +65,43 @@
 
 9. How would you parse incoming request bodies in Express.js? Provide an example of how you might handle a JSON payload.
 
+   Express.js has a built in express.json() middleware that enables us to parse incoming requests bodies. For example:
+
+   ```
+   /* Middlewate to parse JSON payloads */
+   app.use(express.json());
+
+   /* POST route that will handle the JSON payload */
+   app.post('/item', (req, res) => {
+      const item = req.body
+   })
+   ```
+
+   In this example the middleware add a _body_ property to the request object _req.body_ which can be accesed to get a hold of the JSON data sent in the request body.
+
 10. How can testing be implemented for a RESTful API built with Node and Express? Provide an example of a test case for one of your API endpoints.
+
+Testing can be implemented using Jest and Supertest. Jest is a testing framework and Supertest is used to make HTTP requests and simulate interactions with the API.
+
+Here's an example of a test case for a GET API endpoint that shows a list of groceries in a cart:
+
+```
+const request = require('supertest');
+const app = require('./app);
+
+describe('GET/cart', () => {
+   it('should return a list of groceries in the cart', async () => {
+      <!-- make a get request to the /cart endpoint -->
+      const response = await reques(app).get('/cart');
+
+      <!-- make sure that the response is successful -->
+      expect(response.status).toBe(200);
+      expect(response.body).toEqual([
+         {id: xxx, name: 'Potato', quantity: 4},
+         {id: yyy, name: 'Lemon', quantity: 5}
+      ])
+   } )
+})
+```
+
+The test case sends a GET request to the `/cart' endpoint using the _request_ function. Then we make sure that the response has a status of 200 and the body of the response matches the expected Schema.
