@@ -1,3 +1,18 @@
+# This readme contains Written HW for week 10 and the steps on how to run the API for the practical HW
+
+## Practical HW
+
+#### Follow these steps to run the API on your machine
+
+- Fork Project and clone project
+- Run npm install
+- Run npm run dev
+- To get the list of items, send a GET request to http://localhost:3000/items.
+- To add a new item, send a POST request to http://localhost:3000/items with a JSON body containing name and price fields.
+- To get a specific item, send a GET request to http://localhost:3000/items/:id, replacing :id with the actual item ID.
+- To update an item, send a PUT request to http://localhost:3000/items/:id with a JSON body containing name and price fields, replacing :id with the actual item ID.
+- To delete an item, send a DELETE request to http://localhost:3000/items/:id, replacing :id with the actual item ID.
+
 ## Written HW
 
 1. Explain what a REST API is. What makes an API "RESTful"?
