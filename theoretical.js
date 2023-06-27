@@ -1,4 +1,4 @@
-function spiralWhore(n) {
+function spiralMatrix(n) {
   const arr = Array(n)
     .fill()
     .map(() => Array(n));
@@ -33,4 +33,4 @@ function spiralWhore(n) {
   }
   return arr;
 }
-console.log(spiralWhore(4));
+console.log(spiralMatrix(4));
